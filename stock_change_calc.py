@@ -19,7 +19,6 @@ def retrieve_all_stock_prices_recorded(conn: connection) -> list:
     with conn.cursor() as cur:
         cur.execute("""SELECT * FROM stock_price_current""")
         data = cur.fetchall()
-    conn.close()
     return data
 
 
@@ -28,7 +27,6 @@ def retrieve_all_stock_daily_price_changes(conn: connection) -> list:
     with conn.cursor() as cur:
         cur.execute("""SELECT * FROM stock_price_daily""")
         data = cur.fetchall()
-    conn.close()
     return data
 
 
@@ -36,3 +34,4 @@ if __name__ == "__main__":
     db_conn = get_db_conn()
     print(retrieve_all_stock_prices_recorded(db_conn))
     print(retrieve_all_stock_daily_price_changes(db_conn))
+    db_conn.close()
