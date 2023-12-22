@@ -1,4 +1,0 @@
-# StockTracker
-
-CHANGE
-test
