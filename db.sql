@@ -13,6 +13,7 @@ CREATE TABLE stock_price_daily(
 CREATE TABLE stock_price_current(
     stock_current_id SMALLINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     stock_name VARCHAR(10) NOT NULL,
+    exchange VARCHAR(15) NOT NULL,
     current_price FLOAT NOT NULL,
     date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
